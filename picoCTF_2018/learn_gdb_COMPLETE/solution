@@ -1,0 +1,9 @@
+enter gdb
+file run
+info function #displays all defined functions
+b decrypt_flag #sets a breakpoint at the function
+r #run
+x/s flag_buf #to read this on memory
+n #go step by step in function withoud going into subroutines
+x/s flag_buf
+
