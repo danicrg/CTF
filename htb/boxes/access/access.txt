@@ -1,0 +1,19 @@
+Nmap scan report for 10.10.10.98
+Host is up (0.045s latency).
+Not shown: 997 filtered ports
+PORT   STATE SERVICE
+21/tcp open  ftp
+23/tcp open  telnet
+80/tcp open  http
+
+ftp get archivos
+con credenciales anonymous:anonymous
+
+Correo sacado de los archivos:
+	Hi there,
+	 
+	The password for the “security” account has been changed to 4Cc3ssC0ntr0ller.  Please ensure this is passed on to your engineers.
+	 
+	Regards,
+	John
+
