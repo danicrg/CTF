@@ -15,6 +15,9 @@
 - gdb
 
 # STEGO
+- strings
+- xxd or hexdump -C
+- binwalk
 - steghide extract -sf
 
 # SHELL
