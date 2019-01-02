@@ -19,6 +19,10 @@
 - xxd or hexdump -C
 - binwalk
 - steghide extract -sf
+- fcrackzip
+
+		fcrackzip -v -m zip6 -l 4-8 -u secret.zip
+		fcrackzip -v -D -u -p /usr/share/dict/words secret.zip
 
 # SHELL
 - vim:
