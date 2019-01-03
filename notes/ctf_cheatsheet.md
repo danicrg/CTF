@@ -1,6 +1,6 @@
 # WEB
 - Check for robots.txt
-- gobuster -u (url) http://... -w [wordlist]
+- gobuster -e -u [url] -w /usr/share/wordlists/dirb/common.txt
 - searchsploit -r (buscar exploits de apps web)
 - sqlmap:
 
@@ -9,6 +9,9 @@
 	- --url
 	- --enumerate [-u for usernames]
 	- --log
+# CRYPTO
+- https://quipqiup.com/
+- http://www.cryptoprograms.com/
 
 # BINARY EXPLOITATION
 - to get asm code run 'objdump -d [binary file] > out.S'
