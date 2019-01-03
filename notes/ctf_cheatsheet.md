@@ -41,6 +41,7 @@
 # BOXES
 - sudo -l: gives the files you can access without root password
 - reverseshells: https://github.com/infodox/python-pty-shells
+- privilege escalation: https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/
 
 ## nmap:
 - sT -> three way handshake
