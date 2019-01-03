@@ -1,0 +1,1 @@
+./RsaCtfTool/RsaCtfTool.py --publickey key.pub --uncipherfile flag.enc
