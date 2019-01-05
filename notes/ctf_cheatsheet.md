@@ -25,7 +25,7 @@
 - fcrackzip
 
 		fcrackzip -v -m zip6 -l 4-8 -u secret.zip
-		fcrackzip -v -D -u -p /usr/share/dict/words secret.zip
+		fcrackzip -D -v -u -p /usr/share/wordlists/rockyou.txt secret.zip
 - password generator: https://github.com/Broham/PassGen
 
 # SHELL
