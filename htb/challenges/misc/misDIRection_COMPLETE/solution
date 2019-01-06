@@ -1,3 +1,3 @@
 #!/bin/bash
 
-find . -type f | sort -t/ -k 3,3 -n |cut -d"/" -f2 |xargs echo -n | tr -d "[:space:]" | base64 -d
+find .secret -type f | sort -t/ -k 3,3 -n |cut -d"/" -f2 |xargs echo -n | tr -d "[:space:]" | base64 -d
