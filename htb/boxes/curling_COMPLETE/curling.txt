@@ -21,3 +21,12 @@ s
 curl 10.10.10.150/secret.txt
 Q3VybGluZzIwMTgh --> Curling2018! (base64 decode)
 
+is password for user Floris.
+
+We enter as administrators and change source code of template to <?php system(GET['x']); or somthing like that (limited shell);
+
+we read password_backup, copy it to local and decompress until we get ssh password for floris (password.txt)
+
+we login via ssh and read user.txt
+
+To get root we modify input file in admin-access directory to ftp:/127.0.0.1/root/root.txt and after a while we get the flag in report
