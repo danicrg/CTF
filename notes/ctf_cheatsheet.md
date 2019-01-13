@@ -9,6 +9,7 @@
 	- --url
 	- --enumerate [-u for usernames]
 	- --log
+- testing what runs in background: https://github.com/swisskyrepo/PayloadsAllTheThings
 # CRYPTO
 - https://quipqiup.com/
 - http://www.cryptoprograms.com/
