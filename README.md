@@ -1,6 +1,6 @@
 # CTF Writeups
 
-Mostly notes and scripts for Capture The Flag competitions.
+Mostly notes and scripts for Capture The Flag competitions. Not curated. For personal use.
 
 - [HackTheBox Boxes](./htb/boxes)
 - [HackTheBox Challenges](./htb/challenges)
