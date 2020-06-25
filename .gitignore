@@ -1,3 +1,5 @@
 **/danicrg.ovpn
+*.DS_Store*
 quiz/
 htb/forumCredentials
+htb/inviteCode
